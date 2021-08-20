@@ -71,4 +71,4 @@ jobs:
           file: ./Dockerfile
           target: runtime
           push: true
-          tags: ${{ env.IMAGE_ID }}:latest
+          tags: ${{ env.IMAGE_ID }}:${{ github.sha }}
