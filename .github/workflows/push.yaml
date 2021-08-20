@@ -14,6 +14,7 @@ on:
 
 env:
   IMAGE_ID: ${{ secrets.AWS_ECR_URI }}
+  SHA8: ${GITHUB_SHA::8}
 
 jobs:
   ci:
@@ -71,4 +72,4 @@ jobs:
           file: ./Dockerfile
           target: runtime
           push: true
-          tags: ${{ env.IMAGE_ID }}:${{ github.sha }}
+          tags: ${{ env.IMAGE_ID }}:${{ env.SHA8 }}
